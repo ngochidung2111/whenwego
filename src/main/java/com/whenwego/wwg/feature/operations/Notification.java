@@ -6,7 +6,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import com.whenwego.wwg.feature.event.Event;
-import com.whenwego.wwg.feature.identity.User;
+import com.whenwego.wwg.feature.identity.entity.User;
 import com.whenwego.wwg.feature.participation.GuestParticipant;
 import com.whenwego.wwg.shared.BaseEntity;
 

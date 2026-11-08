@@ -1,4 +1,4 @@
-package com.whenwego.wwg.feature.identity;
+package com.whenwego.wwg.feature.identity.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+
+
 
 @Entity
 @Table(name = "users")
@@ -57,5 +59,9 @@ public class User extends BaseEntity {
 
     public Profile getProfile() {
         return profile;
+    }
+
+    public List<UserRole> getRoles() {
+        return roles;
     }
 }

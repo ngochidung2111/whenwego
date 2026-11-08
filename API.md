@@ -42,16 +42,20 @@ a proposed v1 contract and can be adjusted during API design.
 
   Method   Endpoint           Purpose
   -------- ------------------ ------------------------------------
-  POST     `/auth/register`   Create a registered account
-  POST     `/auth/login`      Authenticate and issue tokens
+  POST     `/api/auth/register`   Create a registered account and issue a JWT
+  POST     `/api/auth/login`      Authenticate and issue a JWT
   POST     `/auth/refresh`    Refresh an access token
   POST     `/auth/logout`     Revoke the refresh session/token
   GET      `/auth/me`         Get the current authenticated user
 
-**Implementation notes** - Hash passwords using a modern password
-encoder (for example, BCrypt or Argon2). - Keep access tokens
-short-lived; rotate/revoke refresh tokens. - Never return password
-hashes or secret token material.
+**Implementation notes** - The current implementation uses BCrypt and
+stateless JWT bearer access tokens. Configure `JWT_SECRET` with a
+cryptographically random secret (at least 32 bytes; Base64 is supported)
+and send it as `Authorization: Bearer <accessToken>`. Access tokens
+expire after `app.jwt.expiration` milliseconds (the default is 24 hours).
+The `USER` role is assigned during registration; additional endpoint
+authorization can use `@PreAuthorize("hasRole('ADMIN')")`. Refresh and
+logout endpoints are not implemented yet.
 
 ### 2. User profile
 

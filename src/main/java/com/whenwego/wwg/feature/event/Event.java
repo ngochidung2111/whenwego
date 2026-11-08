@@ -7,7 +7,7 @@ import java.util.List;
 
 import jakarta.persistence.CheckConstraint;
 
-import com.whenwego.wwg.feature.identity.User;
+import com.whenwego.wwg.feature.identity.entity.User;
 import com.whenwego.wwg.feature.participation.EventMember;
 import com.whenwego.wwg.shared.BaseEntity;
 

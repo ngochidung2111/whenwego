@@ -3,7 +3,7 @@ package com.whenwego.wwg.feature.decision;
 import java.time.Instant;
 
 import com.whenwego.wwg.feature.event.Event;
-import com.whenwego.wwg.feature.identity.User;
+import com.whenwego.wwg.feature.identity.entity.User;
 import com.whenwego.wwg.shared.BaseEntity;
 
 import jakarta.persistence.Column;

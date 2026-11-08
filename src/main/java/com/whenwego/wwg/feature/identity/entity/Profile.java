@@ -1,4 +1,4 @@
-package com.whenwego.wwg.feature.identity;
+package com.whenwego.wwg.feature.identity.entity;
 
 import java.time.Instant;
 import java.util.UUID;

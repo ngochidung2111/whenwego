@@ -1,4 +1,4 @@
-package com.whenwego.wwg.feature.identity;
+package com.whenwego.wwg.feature.identity.entity;
 
 import com.whenwego.wwg.shared.BaseEntity;
 
@@ -11,11 +11,12 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "user_roles", indexes = {
-        @Index(name = "ix_user_roles_role_user", columnList = "role_id,user_id")
-}, uniqueConstraints = {
-        @UniqueConstraint(name = "uk_user_roles_user_role", columnNames = { "user_id", "role_id" })
-})
+@Table(
+        name = "user_roles",
+        indexes = @Index(name = "ix_user_roles_role_user", columnList = "role_id,user_id"),
+        uniqueConstraints = @UniqueConstraint(
+                name = "uk_user_roles_user_role",
+                columnNames = { "user_id", "role_id" }))
 public class UserRole extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
